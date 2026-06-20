@@ -515,14 +515,24 @@ body {
 
   border-radius: 24px;
 
-  padding: 35px 25px;
+  padding: 25px;
 
-  text-align: center;
+  overflow: hidden;
 
-  transition: 0.4s ease;
+  position: relative;
 
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.06);
+    0 10px 30px rgba(0, 0, 0, 0.08);
+
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+
+.module-card:hover {
+  transform: translateY(-12px);
+
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.12);
 }
 
 .module-card:hover {
@@ -532,10 +542,19 @@ body {
     0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-.module-icon {
-  font-size: 3rem;
+.tool-image {
+  width: 100%;
+  height: 180px;
+
+  object-fit: contain;
 
   margin-bottom: 20px;
+
+  transition: 0.4s ease;
+}
+
+.module-card:hover .tool-image {
+  transform: scale(1.05);
 }
 
 .module-card h3 {

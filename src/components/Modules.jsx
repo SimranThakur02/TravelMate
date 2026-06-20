@@ -1,29 +1,39 @@
+import layover from "../assets/tools/layover.svg";
+import stayfinder from "../assets/tools/stay.svg";
+import roambudget from "../assets/tools/budget.svg";
+import nomadscout from "../assets/tools/nomad.svg";
+import { useNavigate } from "react-router-dom";
+
 function Modules() {
+    const navigate = useNavigate();
     const tools = [
         {
             title: "Layover Roulette",
-            icon: "✈",
+            image: layover,
             description:
-                "Generate smart itineraries for airport layovers."
+                "Generate smart itineraries for airport layovers.",
+            route: "/layover"
         },
-
         {
             title: "StayFinder",
-            icon: "🏠",
+            image: stayfinder,
             description:
-                "Find budget hotels, hostels, PGs and couchsurfing options near your destination."
+                "Find budget hotels, hostels, PGs and couchsurfing options.",
+            route: "/stayfinder"
         },
         {
             title: "RoamBudget",
-            icon: "💰",
+            image: roambudget,
             description:
-                "Track travel expenses and split bills."
+                "Track travel expenses and split bills.",
+            route: "/roambudget"
         },
         {
             title: "NomadScout",
-            icon: "🌍",
+            image: nomadscout,
             description:
-                "Find digital nomad friendly neighborhoods."
+                "Discover digital nomad friendly neighborhoods.",
+            route: "/nomadscout"
         }
     ];
 
@@ -40,10 +50,16 @@ function Modules() {
 
             <div className="module-grid">
                 {tools.map((tool, index) => (
-                    <div className="module-card" key={index}>
-                        <div className="module-icon">
-                            {tool.icon}
-                        </div>
+                    <div
+                        className="module-card"
+                        key={index}
+                        onClick={() => navigate(tool.route)}
+                    >
+                        <img
+                            src={tool.image}
+                            alt={tool.title}
+                            className="tool-image"
+                        />
 
                         <h3>{tool.title}</h3>
 
