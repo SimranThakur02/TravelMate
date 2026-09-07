@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Destinations from "../components/Destinations";
+import Destinations from "../components/Destinationss";
 import Modules from "../components/Modules";
 import WhyTravelMate from "../components/WhyTravelMate";
 import Footer from "../components/Footer";
