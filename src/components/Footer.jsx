@@ -95,7 +95,7 @@ function Footer() {
             <div className="footer-bottom">
                 <p>
                     © {new Date().getFullYear()} TravelMate.
-                    All rights reserved.
+                    All rights reserved. <br /> Developed by Ramana WebCreates
                 </p>
             </div>
 

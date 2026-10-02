@@ -1,4 +1,28 @@
+import { useState } from "react";
+
 function Hero() {
+
+    const [destination, setDestination] = useState("");
+
+    const handleSearch = () => {
+
+        if (!destination.trim()) {
+            return;
+        }
+
+        const searchUrl = `https://en.wikivoyage.org/w/index.php?search=${encodeURIComponent(
+            destination.trim()
+        )}`;
+
+        window.open(searchUrl, "_blank");
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter") {
+            handleSearch();
+        }
+    };
+
     return (
         <section className="hero">
 
@@ -10,7 +34,6 @@ function Hero() {
                     <span className="blue-text">Explore</span> More.
                 </h1>
 
-
                 <p>
                     Discover destinations, optimize packing,
                     manage expenses and plan layovers —
@@ -18,24 +41,45 @@ function Hero() {
                 </p>
 
                 <div className="search-box">
+
                     <input
                         type="text"
                         placeholder="Search any destination..."
+                        value={destination}
+                        onChange={(e) => setDestination(e.target.value)}
+                        onKeyDown={handleKeyDown}
                     />
 
-                    <button>
+                    <button onClick={handleSearch}>
                         Search
                     </button>
+
                 </div>
 
                 <div className="hero-buttons">
-                    <button className="primary-btn">
+
+                    <button
+                        className="primary-btn"
+                        onClick={() => {
+                            document
+                                .querySelector(".destinations")
+                                ?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                    >
                         Explore Destinations
                     </button>
 
-                    <button className="secondary-btn">
+                    <button
+                        className="secondary-btn"
+                        onClick={() => {
+                            document
+                                .querySelector(".modules")
+                                ?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                    >
                         Learn More
                     </button>
+
                 </div>
 
             </div>
