@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import Layover from "./pages/Layover";
 import StayFinder from "./pages/StayFinder";
@@ -9,7 +9,7 @@ import NomadScout from "./pages/NomadScout";
 function App() {
   return (
     <BrowserRouter>
-
+      <ScrollToTop />
       <Routes>
 
         <Route
